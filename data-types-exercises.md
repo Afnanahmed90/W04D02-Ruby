@@ -8,46 +8,42 @@
 
 ```rb
 2 ** 3
+
+
 ```
-```text
-Your answer.
+```8
 ```
 
 ```rb
 ((16 / 4) * (2 + 1)) ** 2
 ```
-```text
-Your answer.
+```144
 ```
 
 ```rb
 ("a milli " + "a milli") * 3
 ```
-```text
-Your answer.
+```a milli a millia milli a millia milli a milli
 ```
 
 ```rb
 ("a milli " * 4) / 2
 ```
-```text
-Your answer.
+```(NoMethodError)
 ```
 
 ```rb
 my_favorite_number = 13
 puts "My favorite number is: " + my_favorite_number
 ```
-```text
-Your answer.
+```Error.
 ```
 
 ```rb
 my_favorite_number = 13
 puts "My favorite number is: #{my_favorite_number}"
 ```
-```text
-Your answer.
+```My favorite number is: 13
 ```
 
 ### Truthiness and Falsiness
@@ -64,7 +60,8 @@ Your answer.
 [ ] NaN
 [ ] nil
 ```
-
+[ ] false
+[ ] nil
 #### What are the outputs and/or side effects of the following code snippets?
 
 * Make a guess before testing your answer.
@@ -77,8 +74,7 @@ if no_name
   puts "My name is: " + no_name
 end
 ```
-```text
-Your answer.
+```My name is: 
 ```
 
 ```rb
@@ -87,8 +83,7 @@ if no_name
   puts "My name is: " + no_name
 end
 ```
-```text
-Your answer.
+```    
 ```
 
 ```rb
@@ -97,8 +92,7 @@ if age
   puts "My age is: " + no_name
 end
 ```
-```text
-Your answer.
+``` (NameError)
 ```
 
 ```rb
@@ -107,8 +101,7 @@ if age
   puts "My age is: " + age
 end
 ```
-```text
-Your answer.
+```My age is: 29
 ```
 
 ### Conditionals
@@ -126,9 +119,22 @@ Fizz-Buzz is a classic coding exercise that you can create using your knowledge 
 * If the number does not meet any of the above conditions, just print the number.
 
 Your output should look something like this...
-```
-1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, Fizz Buzz, 16, 17, Fizz, 19, Buzz, Fizz, 22, 23, Fizz, Buzz, 26, Fizz, 28, 29, Fizz Buzz, 31, 32, Fizz, 34, Buzz, Fizz, ...
-```
+`
+
+(1..100).each do |n|
+    i_3=(n%3==0)
+    i_5=(n%5==0)
+    case
+        when i_3&&i_5
+            puts 'fizzbuzz'
+        when i_3
+            puts 'fizz'
+        when i_5
+            puts 'buzz'
+        else
+            puts n
+    end
+end
 
 <details>
   <summary><strong>We haven't covered loops yet, so to get you started...</strong></summary>
